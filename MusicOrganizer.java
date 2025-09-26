@@ -51,7 +51,6 @@ public class MusicOrganizer
             System.out.println(filename);
         }
     }
-    
     /**
      * Show a list of all the files in the collection.
      */
@@ -61,7 +60,6 @@ public class MusicOrganizer
             System.out.println(filename);
         }
     }
-    
     public void listWithIndex()
     {
         int position = 0;
@@ -71,8 +69,6 @@ public class MusicOrganizer
            
         }
     }
-    
-    
     /**
      * Remove a file from the collection.
      * @param index The index of the file to be removed.
@@ -83,7 +79,6 @@ public class MusicOrganizer
             files.remove(index);
         }
     }
-
     /**
      * Start playing a file in the collection.
      * Use stopPlaying() to stop it playing.
@@ -96,7 +91,6 @@ public class MusicOrganizer
             player.startPlaying(filename);
         }
     }
-
     /**
      * Stop the player.
      */
@@ -104,7 +98,6 @@ public class MusicOrganizer
     {
         player.stop();
     }
-
     /**
      * Play a file in the collection. Only return once playing has finished.
      * @param index The index of the file to be played.
@@ -116,7 +109,6 @@ public class MusicOrganizer
             player.playSample(filename);
         }
     }
-
     /**
      * Determine whether the given index is valid for the collection.
      * Print an error message if it is not.
@@ -144,19 +136,17 @@ public class MusicOrganizer
     }
     public void listMatching(String searchString)
     {
-        boolean validName; 
-        validName = true;
+        boolean foundMatch = false;
         for (String filename : files){
                if (filename.contains(searchString)){
                   //A match.
                   System.out.println(filename);
+                  foundMatch = true;
                } 
-               else{
-                validName = false;
-                System.out.println("No files mathched ");
                 }
-             }
-        
+        if(!foundMatch){
+            System.out.println("No files found with the name: "+ searchString);
         }
+             }
+          }
     
-    }
