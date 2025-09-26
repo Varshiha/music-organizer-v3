@@ -144,11 +144,19 @@ public class MusicOrganizer
     }
     public void listMatching(String searchString)
     {
-    for (String filename : files){
-     if (filename.contains(searchString)){
-         //A match.
-         System.out.println(filename);
-     }
+        boolean validName; 
+        validName = true;
+        for (String filename : files){
+               if (filename.contains(searchString)){
+                  //A match.
+                  System.out.println(filename);
+               } 
+               else{
+                validName = false;
+                System.out.println("No files mathched ");
+                }
+             }
+        
+        }
+    
     }
-    }
-}
