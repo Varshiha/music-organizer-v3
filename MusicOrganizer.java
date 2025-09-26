@@ -12,6 +12,7 @@ public class MusicOrganizer
     private ArrayList<String> files;
     // A player for the music files.
     private MusicPlayer player;
+    
         
     /**
      * Create a MusicOrganizer
@@ -133,6 +134,19 @@ public class MusicOrganizer
             valid = true;
         }
         return valid;
+    }
+    public void playArtistSample(String artist)
+    {
+        boolean found = false;
+        for (String filename : files){
+               if (filename.contains(artist)){
+                  player.playSample(filename);
+                  found = true;
+               } 
+                }
+        if(!found){
+            System.out.println("No files found with the artist: "+ artist);
+        }
     }
     public void listMatching(String searchString)
     {
